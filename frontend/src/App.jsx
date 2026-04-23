@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 
 // Reat application
@@ -10,7 +11,7 @@ const App = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/messages/');
+      const response = await fetch(import.meta.env.VITE_BACKEND_URL + 'messages/');
       const jsonData = await response.json();
       setData(jsonData.messages);
     } catch (error) {
@@ -20,7 +21,7 @@ const App = () => {
 
   const postData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/messages/', {
+      const response = await fetch(import.meta.env.VITE_BACKEND_URL + 'messages/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
