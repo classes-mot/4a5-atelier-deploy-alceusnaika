@@ -13,7 +13,7 @@ await connectDB(MONGODB_URI);
 
 const app = express();
 // chercher les variables d'environnemnt
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 // section des middlewares
 
 app.use(express.json());
